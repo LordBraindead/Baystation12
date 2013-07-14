@@ -20,6 +20,10 @@
 	layer = 2.8
 	throwpass = 1	//You can throw objects over this, despite it's density.")
 	var/parts = /obj/item/weapon/table_parts
+	m_amt = 7500
+	fire_min_burn_temp = 600
+	fire_burn_multiplier = 1
+	fire_fuel_worth = 2
 
 /obj/structure/table/New()
 	..()
@@ -338,6 +342,10 @@
 	desc = "Do not apply fire to this. Rumour says it burns easily."
 	icon_state = "wood_table"
 	parts = /obj/item/weapon/table_parts/wood
+	m_amt = 0
+	fire_min_burn_temp = 500
+	fire_burn_multiplier = 1.25
+	fire_fuel_worth = 5
 
 /*
  * Reinforced tables
@@ -348,6 +356,10 @@
 	icon_state = "reinf_table"
 	var/status = 2
 	parts = /obj/item/weapon/table_parts/reinforced
+	m_amt = 15000
+	fire_min_burn_temp = 1000
+	fire_burn_multiplier = 0.8
+	fire_fuel_worth = 1
 
 
 /obj/structure/table/reinforced/attackby(obj/item/weapon/W as obj, mob/user as mob)
